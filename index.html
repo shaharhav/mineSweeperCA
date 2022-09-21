@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="onInit()" oncontextmenu="return false;">
+<body onload="initGame()" oncontextmenu="return false;">
     <h1>MineSweeper</h1>
     <div class="timer">Time: <span>LIFE </span>/s</div>
     <div class="lifes">lifes: <span></span></div>
-    <button class="button" onclick="onInit()" onclick="stopTime()">Easy</button>
-    <button class="button" onclick="onInit(8)" onclick="stopTime()">Hard</button>
-    <button class="button" onclick="onInit(12)" onclick="stopTime()">Brave++</button>
+    <button class="button" onclick="initGame()" onclick="stopTime()">Easy</button>
+    <button class="button" onclick="initGame(8)" onclick="stopTime()">Hard</button>
+    <button class="button" onclick="initGame(12)" onclick="stopTime()">Brave++</button>
 
 
     <div class="board"></div>

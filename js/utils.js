@@ -1,6 +1,6 @@
 'use strict'
 
-function renderBoard(mat, selector) {
+function renderBoard(mat) {
 
     var strHTML = '<table class="center" border="1"><tbody>'
     for (var i = 0; i < mat.length; i++) {
@@ -10,13 +10,13 @@ function renderBoard(mat, selector) {
 
             const cell = mat[i][j]
             const className = 'cell cell-' + i + '-' + j
-            strHTML += `<td class="${className}" onclick="onCellClicked(this,${i},${j})" oncontextmenu="mark(this,${i},${j})"></td>`
+            strHTML += `<td class="${className}" onclick="cellClicked(this,${i},${j})" oncontextmenu="cellMarked(this,${i},${j})"></td>`
         }
         strHTML += '</tr>'
     }
     strHTML += '</tbody></table>'
     
-    const elContainer = document.querySelector(selector)
+    const elContainer = document.querySelector('.board')
     elContainer.innerHTML = strHTML
 }
 
