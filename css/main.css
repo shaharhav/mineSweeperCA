@@ -1,0 +1,86 @@
+body {
+    background-color: lightcoral;
+    text-align: center;
+}
+
+.board {
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+
+}
+
+
+
+.button {
+    cursor: pointer;
+    background-color: brown;
+    margin-left: 15px;
+    border-radius: 25%;
+    color: white;
+}
+.emoji{
+    cursor: pointer;
+    height: 70px;
+    width: 70px;
+    background-color: gold;
+    margin-top: 15px;
+    font-size: 35px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    
+}
+
+.lifes {
+    height: 50px;
+    width: 210px;
+    position: static;
+    background-color: rgb(233, 233, 0);
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 35%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    border-style: groove;
+    
+}
+
+.timer {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    padding:  15px;
+    height: 70px;
+    width: 70px;
+    background-color: lightgoldenrodyellow;
+    position: static;
+    left: 10px;
+    top: 20px;
+    margin: auto;
+    font-style: oblique;
+    font-size: 30px;
+    border-style: groove;
+
+}
+
+.cell.clicked {
+    background-color: lightgreen;
+}
+
+.cell.boom {
+    background-color: rgb(77, 5, 5);
+}
+
+.cell.mark {
+    background-color: rgb(6, 15, 94);
+}
