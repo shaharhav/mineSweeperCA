@@ -41,8 +41,8 @@ function getRandomColor() {
 }
 function getRandomEmptyCellLocation(board) {
     const emptyCells = [];
-    for (var i = 1; i < board.length - 1; i++) {
-        for (var j = 1; j < board[0].length - 1; j++) {
+    for (var i = 0; i < board.length - 1; i++) {
+        for (var j = 0; j < board[0].length - 1; j++) {
             const currCell = board[i][j]
             if ((!currCell.isMine) && (!currCell.isShown)) emptyCells.push({ i: i, j: j });
         }

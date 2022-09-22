@@ -10,15 +10,24 @@ const EZSOUND = new Audio("sound/ez.mp3");
 const HARDSOUND = new Audio("sound/hard.mp3");
 const BRAVESOUND = new Audio("sound/brave.mp3");
 const HINTSOUND = new Audio("sound/hellothere.mp3");
+const RESTART = new Audio("sound/restart.mp3");
+const MYBODY = new Audio("sound/mybody.mp3");
+const RICKROLLED = new Audio("sound/rickrolled.mp3");
+const MARKEDSOUND = new Audio("sound/hitmarker_1.mp3");
+
 
 MINESOUND.volume = 0.2;
+MYBODY.volume = 0.2;
+RICKROLLED.volume = 0.2;
+
+
 
 const MINE = '💣';
-const FLAG = '⛳'
-const LIFE = '💝'
-const NORMAL = '😀'
-const LOSE = '🤯'
-const WIN = '😎'
+const FLAG = '⛳';
+const LIFE = '💝';
+const NORMAL = '😀';
+const LOSE = '🤯';
+const WIN = '😎';
 const EASYMINES = 2;
 const HARDMINES = 14;
 const BRAVEMINES = 32;
@@ -125,7 +134,7 @@ function cellClicked(elCell, i, j) {
 }
 function cellMarked(elCell, i, j) {
     if (!gGame.isOn) return;
-    if (gGame.markedCount > gLevel.MINES) return;
+    
     if (gIsFirstClick) {
         setMinesNegsCount(gLevel.MINES);
         gIsFirstClick = false;
@@ -141,10 +150,12 @@ function cellMarked(elCell, i, j) {
         gGame.markedCount--;
         gGame.shownCount--;
     } else {
+        if(gGame.markedCount===gLevel.MINES) return;
         elCell.classList.toggle('mark');
         currCell.isMarked = true;
         elCell.innerText = FLAG;
         gGame.markedCount++
+        markPlay();
         checkVictory();
     }
     if (gGame.markedCount < 0) gGame.markedCount = 0;
@@ -281,7 +292,9 @@ function renderLifes(symbol) {
     elLifes.innerText = strText;
 }
 function resetBoard() {
+    RESTART.play();
     initGame(gLevel.SIZE);
+
 }
 function giveHint(elBtn) {
     var location = getPlaceForHint(gBoard);
@@ -296,17 +309,30 @@ function giveHint(elBtn) {
 function removeHint(pos) {
     document.querySelector(`.cell-${pos.i}-${pos.j}`).classList.remove('hint');
 }
-function easyPlay(){
+function easyPlay() {
     EZSOUND.play();
 }
-function hardPlay(){
+function hardPlay() {
     HARDSOUND.play();
 }
-function bravePlay(){
+function bravePlay() {
     BRAVESOUND.play();
 }
 
 
-function hardPlay(){
+function hardPlay() {
     HARDSOUND.play();
+}
+function rickPlay() {
+    RICKROLLED.play();
+}
+function bodyPlay() {
+    MYBODY.play();
+}
+function markPlay() {
+    MARKEDSOUND.play();
+}
+function bodyPause() {
+    MYBODY.pause();
+    MYBODY.currentTime = 0;
 }

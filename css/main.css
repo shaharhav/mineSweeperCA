@@ -47,7 +47,17 @@ h1{
     background-color:transparent;
     border:0;
 }
-
+.rick{
+    /* background-image: url(../img/Capture.JPG); */
+    cursor: pointer;
+    background-image: inherit;
+    margin-left: 15px;
+    border-radius: 75%;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
 .board {
     text-align: center;
 }

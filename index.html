@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="initGame()" oncontextmenu="return false;">
+<body  onload="initGame()" oncontextmenu="return false;">
     <h1>MineSweeper</h1>
     <div class="timer">Time: <span>0</span>/s</div>
     <div class="lifes">lifes: <span></span></div>
@@ -22,7 +22,7 @@
 
 
     <div class="board"></div>
-
+    <button class="rick" onmouseout="bodyPause()" onclick="rickPlay()" onmouseover="bodyPlay()">Win The Game</button>
     <button class="button emoji" onclick="resetBoard();"></button>
 
 
