@@ -9,16 +9,36 @@ body {
 h1{
   font-size: 50px;
   opacity: 1;
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  right: auto;
+  right: auto; */
   color: antiquewhite;
   transition : all 0.7s ease-out;
   background-clip: text;
+  margin-top: -15px;
+  margin-bottom: -5px;
   
   
 }
-.hint{
+.hint1{
+    
+    display: all;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    background-color:transparent;
+    border:0;
+}
+.hint2{
+    
+    display: all;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    background-color:transparent;
+    border:0;
+}
+.hint3{
     
     display: all;
     cursor: pointer;
@@ -41,10 +61,12 @@ h1{
     height: 40px;
     text-align: center;
     cursor: pointer;
-    color: grey;
+    background-color: lightcoral;
 }
 
-
+.hidden{
+    display: none;
+}
 
 .button {
     cursor: pointer;

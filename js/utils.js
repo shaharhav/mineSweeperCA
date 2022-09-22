@@ -15,7 +15,7 @@ function renderBoard(mat) {
         strHTML += '</tr>'
     }
     strHTML += '</tbody></table>'
-    
+
     const elContainer = document.querySelector('.board')
     elContainer.innerHTML = strHTML
 }
@@ -25,7 +25,7 @@ function renderCell(location, value) {
     // Select the elCell and set the value
     const elCell = document.querySelector(`.cell-${location.i}-${location.j}`)
     elCell.innerHTML = value
- 
+
 }
 
 function getRandomIntInclusive(min, max) {
@@ -44,10 +44,25 @@ function getRandomEmptyCellLocation(board) {
     for (var i = 1; i < board.length - 1; i++) {
         for (var j = 1; j < board[0].length - 1; j++) {
             const currCell = board[i][j]
-            if (!currCell.isMine&& !currCell.isShown) emptyCells.push({ i: i, j: j });
+            if ((!currCell.isMine) && (!currCell.isShown)) emptyCells.push({ i: i, j: j });
         }
     }
     if (!emptyCells.length) return null;
-    var randomIdx = getRandomIntInclusive(0, emptyCells.length-1);
+    var randomIdx = getRandomIntInclusive(0, emptyCells.length - 1);
     return emptyCells[randomIdx];
+}
+function getPlaceForHint(board) {
+    while (true) {
+        var emptyCell;
+        var num = getRandomIntInclusive(0, board.length - 1);
+        for (var i = num; i < board.length - 1; i++) {
+            for (var j = 0; j < board[0].length - 1; j++) {
+                const currCell = board[i][j]
+                if (!(currCell.isMine) && !(currCell.isShown)) {
+                    emptyCell = { i: i, j: j };
+                    return emptyCell;
+                }
+            }
+        }
+    }
 }

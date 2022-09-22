@@ -11,12 +11,14 @@
 
 <body onload="initGame()" oncontextmenu="return false;">
     <h1>MineSweeper</h1>
-    <div class="timer">Time: <span>LIFE </span>/s</div>
+    <div class="timer">Time: <span>0</span>/s</div>
     <div class="lifes">lifes: <span></span></div>
-    <!-- <button class="hint" onclick="giveHint(this)">💡</button> -->
-    <button class="button" onclick="initGame()" onclick="stopTime()">Easy</button>
-    <button class="button" onclick="initGame(8)" onclick="stopTime()">Hard</button>
-    <button class="button" onclick="initGame(12)" onclick="stopTime()">Brave++</button>
+    <button class="hint1" onclick="giveHint(this)">💡</button>
+    <button class="hint2" onclick="giveHint(this)">💡</button>
+    <button class="hint3" onclick="giveHint(this)">💡</button>
+    <button class="button" onclick="initGame();easyPlay()">Easy</button>
+    <button class="button" onclick="initGame(8);hardPlay()">Hard</button>
+    <button class="button" onclick="initGame(12);bravePlay()">Brave++</button>
 
 
     <div class="board"></div>
