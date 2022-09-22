@@ -8,13 +8,12 @@ body {
 }
 h1{
   font-size: 50px;
-  opacity: 1;
-  /* position: absolute;
-  top: 0;
-  right: auto; */
-  color: antiquewhite;
+  
+  background-image: linear-gradient(to bottom right,  rgb(233, 233, 0), lightcoral, blue);
+  color:transparent;
+  -webkit-background-clip: text;
   transition : all 0.7s ease-out;
-  background-clip: text;
+  
   margin-top: -15px;
   margin-bottom: -5px;
   
@@ -126,6 +125,7 @@ h1{
     background-color:  rgb(233, 233, 0);
     margin-top: 5px;
     font-size: 35px;
+    margin-left: 0px;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     
@@ -163,4 +163,12 @@ h1{
 
 .cell.mark {
     background-color: rgb(6, 15, 94);
+}
+.safe{
+    display: block;
+    background-color: chartreuse;
+    color: black;
+    margin: auto;
+    margin-top: 5px;
+    height: 50px;
 }
