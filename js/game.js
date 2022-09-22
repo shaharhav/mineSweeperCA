@@ -253,6 +253,13 @@ function checkVictory() {
         if (gLevel.MINES === BRAVEMINES) WIN3.play();
         stopTime();
     }
+    if (gGame.markedCount<gLevel.MINES&&gGame.shownCount+(gLevel.MINES-gGame.markedCount)===gLevel.SIZE**2) {
+        document.querySelector('.emoji').innerText = WIN;
+        if (gLevel.MINES === EASYMINES) WIN1.play();
+        if (gLevel.MINES === HARDMINES) WIN2.play();
+        if (gLevel.MINES === BRAVEMINES) WIN3.play();
+        stopTime();
+    }
 }
 function expandShown(cellI, cellJ, elCell, board) {
     if (board[cellI][cellJ].minesAroundCount) {
