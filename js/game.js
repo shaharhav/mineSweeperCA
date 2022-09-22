@@ -66,7 +66,7 @@ function initGame(size = 4) {
     gGame.markedCount = 0;
     document.querySelector('.emoji').innerText = NORMAL;
     gUserLifes = 3;
-
+    document.querySelector('.flag span').innerText = gLevel.MINES;
     renderLifes(LIFE);
     renderBoard(gBoard)
     gGame.isOn = true;
@@ -149,12 +149,15 @@ function cellMarked(elCell, i, j) {
         elCell.innerText = '';
         gGame.markedCount--;
         gGame.shownCount--;
+        document.querySelector('.flag span').innerText=+document.querySelector('.flag span').innerText+1;
+        
     } else {
         if(gGame.markedCount===gLevel.MINES) return;
         elCell.classList.toggle('mark');
         currCell.isMarked = true;
         elCell.innerText = FLAG;
         gGame.markedCount++
+        document.querySelector('.flag span').innerText-=1;
         markPlay();
         checkVictory();
     }

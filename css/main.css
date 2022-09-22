@@ -20,6 +20,25 @@ h1{
   
   
 }
+.flag{
+    
+    padding: 15px;
+    border-radius: 35%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    border-style: groove;
+    background-color: rgb(233, 233, 0);
+    
+    height: 50px;
+    width: 50px;
+    margin-right: 230px;
+    margin-top: 170px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+}
 .hint1{
     
     display: all;
@@ -89,7 +108,7 @@ h1{
     cursor: pointer;
     height: 70px;
     width: 70px;
-    background-color: gold;
+    background-color:  rgb(233, 233, 0);
     margin-top: 5px;
     font-size: 35px;
     border-bottom-left-radius: 50%;
@@ -121,7 +140,7 @@ h1{
     padding:  15px;
     height: 70px;
     width: 70px;
-    background-color: lightgoldenrodyellow;
+    background-color:  rgb(233, 233, 0);
     position: static;
     left: 10px;
     top: 20px;
